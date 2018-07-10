@@ -10,6 +10,18 @@
  * @private
  */
 const express = require('express')
+const config = {
+    host:'ec2-54-235-66-81.compute-1.amazonaws.com',
+    user: 'yaqralrajdjqyz',
+    database: 'd3d5jccv5mvkm1',
+    password: 'ee05bdd77d2a0f664c504fba57e77fee496731670abbfe1f8bf87aff5e08a2f7',
+    port: 5432,
+    ssl: true
+};
+
+const pg = require('pg');
+// pool takes the object above -config- as parameter
+const pool = new pg.Pool(config);
 
 module.exports = exports = function () {
   const app = express()
@@ -18,7 +30,8 @@ module.exports = exports = function () {
   const methodOverride = require('method-override')
 
   app.set('view engine', 'hbs')
-  app.set('views', path.join(__dirname, './views'))
+  app.set('views', './server/views')
+  hbs.registerPartials('./server/views/partials')
 
   app.use((req, res, next) => {
     const oldEnd = res.end
@@ -34,13 +47,14 @@ module.exports = exports = function () {
 
   app.use(methodOverride('_method'))
 
-  app.get('/home', (req, res, next) => {
+  app.get('/', (req, res, next) => {
     pool.connect(function (err, client, done) {
         if (err) {
             console.log("Can not connect to the DB" + err);
         }
-        res.render("menu.hbs")
+        res.render("menuView")
     });
+    })
 
   app.get('/players', (req, res, next) => {
     pool.connect(function (err, client, done) {
@@ -58,21 +72,23 @@ module.exports = exports = function () {
          })
     });
 
-    app.get('/players/:id', (req, res, next) => {
-        pool.connect(function (err, client, done) {
-            if (err) {
-                console.log("Can not connect to the DB" + err);
-            }
-            client.query('SELECT * FROM "Player"', function (err, result) {
-                 done();
-                 if (err) {
-                     console.log(err);
-                     res.status(400).send(err);
-                 }
-                 res.status(200).send(result.rows);
-                })
-             })
-        });
+  app.get('/players/:id', (req, res, next) => {
+    pool.connect(function (err, client, done) {
+    if (err) {
+    console.log("Can not connect to the DB" + err);
+    }
+    client.query('SELECT * FROM "Player"', function (err, result) {
+        done();
+        if (err) {
+            console.log(err);
+            res.status(400).send(err);
+        }
+        res.status(200).send(result.rows);
+    })
+    })
+    });
 
-  return app
+    return app
 }
+
+
