@@ -66,24 +66,28 @@ module.exports = exports = function () {
              if (err) {
                  console.log(err);
                  res.status(400).send(err);
+                 next()
              }
-             res.status(200).send(result.rows);
+             res.render("playersView",result);
             })
          })
     });
 
   app.get('/players/:id', (req, res, next) => {
+      const id = req.params.id
     pool.connect(function (err, client, done) {
     if (err) {
     console.log("Can not connect to the DB" + err);
     }
-    client.query('SELECT * FROM "Player"', function (err, result) {
+    client.
+    client.query('SELECT * FROM "Player" WHERE id= ?',[id], function (err, result) {
         done();
         if (err) {
             console.log(err);
             res.status(400).send(err);
+            next()
         }
-        res.status(200).send(result.rows);
+        res.render("playerView",result);
     })
     })
     });
