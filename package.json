@@ -1,0 +1,28 @@
+{
+  "name": "soccerwebapp",
+  "version": "1.0.0",
+  "description": "a simple web app related with a football group",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "hbs": "^4.0.1",
+    "mysql": "^2.15.0",
+    "pg": "^7.4.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fezadas/SoccerWebApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fezadas/SoccerWebApp/issues"
+  },
+  "homepage": "https://github.com/fezadas/SoccerWebApp#readme"
+}
