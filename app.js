@@ -3,10 +3,10 @@ const express   = require('express');
 const app       = express();
 
 const config = {
-    user: 'fezadas',
-    database: 'soccerdb',
-    password: 'mypass',
-    port: 5433
+    user: 'yaqralrajdjqyz',
+    database: 'yaqralrajdjqyz',
+    password: 'ee05bdd77d2a0f664c504fba57e77fee496731670abbfe1f8bf87aff5e08a2f7',
+    port: 5432
 };
 
 // pool takes the object above -config- as parameter
