@@ -1,0 +1,90 @@
+<head>
+    {{> head}}
+</head>
+<body>
+    {{> menu this.menuState }}  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="jquery.barrating.min.js"></script>
+<script type="text/javascript">
+   $(function() {
+      $('#example-fontawesome').barrating({
+        theme: 'fontawesome-stars'
+      });
+   });
+</script>
+
+<div class="ui divider"></div>
+
+<table class="ui celled padded table">
+  <thead>
+    <tr><th style="text-align:center">Game Number</th>
+    <th style="text-align:center">Date</th>
+    <th style="text-align:center">Score</th>
+    <th style="text-align:center">Price</th>
+    <th style="text-align:center">Comments</th>
+  </tr></thead>
+  <tbody>
+      {{#each rows}}
+      <tr>
+      <td>
+        <h2 class="ui center aligned header">{{id}}</h2>
+      </td>
+      <td style="text-align:center" class="single line">
+        {{date}}
+      </td>
+      <td style="text-align:center">
+        {{result}}
+      </td>
+      <td style="text-align:center" class="right aligned">
+        {{price}}€
+      </td>
+      <td>{{comments}}</td>
+    </tr>
+      {{/each}}
+  </tbody>
+</table>  
+
+<div class="ui divider"></div>
+<div class="ui divider"></div>
+
+<table class="ui small celled table">
+  <thead>
+    <tr><th style="text-align:center">Day of the Week</th>
+    <th style="text-align:center">Price total</th>
+    <th style="text-align:center">Price per person</th>
+    <th style="text-align:center">Member's Choice</th>
+  </tr></thead>
+  <tbody>
+      <tr>
+      <td style="text-align:center">
+        Friday and Weekend
+      </td>
+      <td style="text-align:center" class="single line">
+        30€
+      </td>
+      <td style="text-align:center">
+        2.15€
+      </td>
+      <td style="text-align:center">
+          <i class="star icon"></i><i class="star icon"></i><i class="star icon"></i>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="text-align:center">
+        Monday to Thursday
+      </td>
+      <td style="text-align:center" class="single line">
+        40€
+      </td>
+      <td style="text-align:center">
+        2.95€
+      </td>
+      <td style="text-align:center">
+          <i class="star icon"></i><i class="star icon"></i>
+      </td>
+    </tr>
+  </tbody>
+
+</body>

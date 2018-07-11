@@ -11,10 +11,10 @@
  */
 const express = require('express')
 const config = {
-    host:'ec2-54-235-66-81.compute-1.amazonaws.com',
-    user: 'yaqralrajdjqyz',
-    database: 'd3d5jccv5mvkm1',
-    password: 'ee05bdd77d2a0f664c504fba57e77fee496731670abbfe1f8bf87aff5e08a2f7',
+    host:'ec2-54-228-251-254.eu-west-1.compute.amazonaws.com',
+    user: 'gtexsakxjefxwv',
+    database: 'd6ir5dq0qbhogc',
+    password: '729d20a96ae0fa56d1dec54de5c8a3b82b3fb3ae89019b8f32317be598305248',
     port: 5432,
     ssl: true
 };
@@ -52,9 +52,20 @@ module.exports = exports = function () {
         if (err) {
             console.log("Can not connect to the DB" + err);
         }
-        res.render("menuView")
+        client.query('SELECT * FROM "Game" ORDER BY id DESC LIMIT 3', function (err, result) {
+            done();
+            if (err) {
+                console.log(err);
+                res.status(400).send(err);
+            
+            }
+            res.render("menuView",result);
+           })
     });
     })
+
+    /***************************************   PLAYERS ROUTES     ************************************************** */
+
 
   app.get('/players', (req, res, next) => {
     pool.connect(function (err, client, done) {
@@ -90,6 +101,25 @@ module.exports = exports = function () {
         res.render("playerView",result);
     })
     })
+    });
+
+   /***************************************   GAMES ROUTES        ************************************************** */
+
+  app.get('/games', (req, res, next) => {
+    pool.connect(function (err, client, done) {
+        if (err) {
+            console.log("Can not connect to the DB" + err);
+        }
+        client.query('SELECT * FROM "Game" ORDER BY id ASC', function (err, result) {
+             done();
+             if (err) {
+                 console.log(err);
+                 res.status(400).send(err);
+                 next()
+             }
+             res.render("gamesView",result);
+            })
+         })
     });
 
     return app
