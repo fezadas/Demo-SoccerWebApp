@@ -122,6 +122,27 @@ module.exports = exports = function () {
          })
     });
 
+  app.get('/nextgame', (req, res, next) => {
+        pool.connect(function (err, client, done) {
+            if (err) {
+                console.log("Can not connect to the DB" + err);
+            }
+            client.query('SELECT * FROM NextGame ORDER BY id DESC limit 1', function (err, result) {
+                 done();
+                 if (err) {
+                     console.log(err);
+                     res.status(400).send(err);
+                     next()
+                 }
+                 res.render("nextgameView",result);
+                })
+             })
+        });   
+
+/***************************************   CONTACT ROUTES        ************************************************** */
+  app.get('/contacts', (req, res, next) => {
+            res.render("workinprogressView");
+            });
     return app
 }
 

@@ -1,0 +1,106 @@
+<head>
+    {{> head}}
+</head>
+<style>
+.center {
+    text-align: center;
+}
+p.thick {
+    font-weight: bold;
+}
+
+</style>
+<body>
+    {{> menu this.menuState }}  
+
+{{#each rows}}
+<div style="display: inline-block;" class="ui center items">
+<div class="item">
+    <div class="content">
+      <a class="header">Next Game</a>
+      <div class="meta">
+        <span>The date is {{date}} and the price of the game will be {{price}} €. </span>
+      </div>
+      <div class="description">
+        <p>The game is going to take place at the Miguel Torga field there is customary time. The teams are the ones on the tables. However they can be changed within the field. Please arrive a little ahead of time to be able to play during the period that was paid. Any questions contact the facebook group.</p>
+      </div>
+      <div class="extra">
+        Usual time: 22h / 23h 
+      </div>
+    </div>
+    </div>
+ {{/each}}
+
+ <div class="ui divider"></div>
+
+<div class="image">
+      <img src="http://www.icosky.com/icon/ico/Sport/Sport%20Fields/Football%20field.ico">
+    </div>
+
+<div class="ui divider"></div>
+
+{{#each rows}}
+    <table style="height:400;width:200;margin-bottom:auto;margin-top:auto;margin-left:auto;margin-right:auto;display: inline-block" class="ui centered selectable inverted table">
+  <thead>
+    <tr>
+      <th>Team 1</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each team1}}
+    <tr>
+      <td><a class="ui image label">
+  <img src='https://semantic-ui.com/images/avatar/small/joe.jpg'>
+  {{this}}
+</a></td>
+    </tr>
+      {{/each}}
+  </tbody>
+</table>
+ {{/each}}
+{{#each rows}}
+
+ <table style="height:400;width:200;margin-bottom:auto;margin-top:auto;margin-left:auto;margin-right:auto;display: inline-block" class="ui centered selectable inverted table">
+  <thead>
+    <tr>
+      <th>Team 2</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each team2}}
+    <tr>
+      <td><a class="ui image label">
+  <img src='https://semantic-ui.com/images/avatar/small/joe.jpg'>
+  {{this}}
+</a></td>
+    </tr>
+      {{/each}}
+  </tbody>
+</table>
+ {{/each}}
+
+ <div class="ui divider"></div>
+
+<div class="ui ordered steps">
+  <div class="completed step">
+    <div class="content">
+      <div class="title">Shoes</div>
+      <div class="description">Choose your shoes properly</div>
+    </div>
+  </div>
+  <div class="completed step">
+    <div class="content">
+      <div class="title">Money</div>
+      <div class="description">Bring money counted in coins</div>
+    </div>
+  </div>
+  <div class="active step">
+    <div class="content">
+      <div class="title">Confirm Date</div>
+      <div class="description">Verify game details</div>
+    </div>
+  </div>
+</div>
+
+</body>    
+
