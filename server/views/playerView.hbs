@@ -1,0 +1,34 @@
+<head>
+    {{> head}}
+</head>
+<style>
+.center {
+    text-align: center;
+}
+p.thick {
+    font-weight: bold;
+}
+
+</style>
+<body>
+   {{> menu this.menuState }}  
+{{#each rows}}
+      <img style="display: block;
+    margin-left: auto;
+    margin-right: auto;width: 250;" src={{img}}>
+<div class="ui center items">
+  <div class="item">
+    <div class="content">
+      <a class="header">{{name}}</a>
+      <div class="description">
+        <p>{{description}} </p>
+        <p>Year of birth: {{year_of_birth}}</p>
+        <i class="futbol outline icon"></i>
+        {{goals}}
+        <p>Assists : {{assists}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{/each}}
+</body>

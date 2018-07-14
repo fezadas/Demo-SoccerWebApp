@@ -8,3 +8,8 @@ CREATE TABLE NextGame(
 
 INSERT INTO NextGame VALUES(1,'Friday 13 July', 30,'Filipe Machado;Pedro Santos;Paulo Calaia;Rafael Francisco;Pipo;Miguel Silva',
 												   'Daniel Filipe;Amigo Silva;Amigo Daniel;Amigo Daniel;Amigo Daniel;Amigo Daniel;Amigo Daniel')
+												   
+												   
+												  
+												  {"Filipe Machado","Carolina Azeitona","Pedro Santos","Paulo Calaia","Rafael Francisco","Pipo","Miguel Silva"}
+												  {"Daniel Filipe","Amigo Silva","Amigo Daniel","Amigo Daniel","Amigo Daniel","Amigo Daniel","Amigo Daniel"}

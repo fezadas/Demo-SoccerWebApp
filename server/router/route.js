@@ -72,7 +72,7 @@ module.exports = exports = function () {
         if (err) {
             console.log("Can not connect to the DB" + err);
         }
-        client.query('SELECT * FROM "Player"', function (err, result) {
+        client.query('SELECT * FROM Player', function (err, result) {
              done();
              if (err) {
                  console.log(err);
@@ -90,8 +90,7 @@ module.exports = exports = function () {
     if (err) {
     console.log("Can not connect to the DB" + err);
     }
-    client.
-    client.query('SELECT * FROM "Player" WHERE id= ?',[id], function (err, result) {
+    client.query('SELECT * FROM PlayerInfo WHERE id='+id, function (err, result) {
         done();
         if (err) {
             console.log(err);
