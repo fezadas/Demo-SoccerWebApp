@@ -1,0 +1,128 @@
+<head>
+    {{> head}}
+</head>
+<style>
+.center {
+    text-align: center;
+}
+p.thick {
+    font-weight: bold;
+}
+
+</style>
+<body>
+   {{> menu this.menuState }}  
+
+<div align="center"> 
+<div style="display: inline-block;" class="ui center items">
+<div class="item">
+    <div class="content">
+      <a class="header"> Game number {{id}}</a>
+      <div class="meta">
+        <span>Date of the game: {{date}} </span>
+      </div>
+      <div class="extra">
+        <span> TEAM 1 <i class="user outline icon"></i> {{result}} <i class="user icon"></i> TEAM 2  </span>
+      </div>
+    </div>
+    </div>
+ <div class="ui divider"></div>
+
+ <i class="portugal flag"></i>
+<i class="france flag"></i>
+<i class="germany flag"></i>
+<i class="belgium flag"></i>
+<i class="croatia flag"></i>
+<i class="italy flag"></i>
+<i class="ireland flag"></i>
+<i class="Netherlands flag"></i>
+<i class="russia flag"></i>
+<i class="iceland flag"></i>
+<i class="spain flag"></i>
+<i class="hungary flag"></i>
+<i class="england flag"></i>
+
+<i class="wales flag"></i>
+<i class="Czech Republic flag"></i>
+<i class="Denmark flag"></i>
+<i class="Serbia flag"></i>
+<i class="Switzerland flag"></i>
+<i class="Austria flag"></i>
+<i class="Luxembourg flag"></i>
+<i class="Latvia flag"></i>
+<i class="Norway flag"></i>
+<i class="Poland flag"></i>
+<i class="Sweden flag"></i>
+<i class="Slovakia flag"></i>
+<i class="Ukraine flag"></i>
+
+<div class="ui divider"></div>
+
+<table style="height:400;width:250;margin-bottom:auto;margin-top:auto;margin-left:auto;margin-right:auto;display: inline-block" class="ui center selectable inverted table">
+  <thead>
+    <tr>
+      <th>Team 1</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each team1}}
+    <tr>
+      <td><a href="/players/{{idplayer}}" class="ui image label">
+  <img src='https://semantic-ui.com/images/avatar/small/joe.jpg'>
+  {{name}}
+ <h10>{{this.goals}}  <i class="futbol icon"></i> </h10>
+  <h10>{{this.assits}}  <i class="handshake outline icon"></i>  </h10>
+
+</a></td>
+    </tr>
+      {{/each}}
+  </tbody>
+</table>
+
+
+ <table style="height:400;width:250;margin-bottom:auto;margin-top:auto;margin-left:auto;margin-right:auto;display: inline-block" class="ui centered selectable inverted table">
+  <thead>
+    <tr>
+      <th>Team 2</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each team2}}
+    <tr>
+      <td><a  href="/players/{{idplayer}}" class="ui image label">
+  <img src='https://semantic-ui.com/images/avatar/small/joe.jpg'>
+  {{name}}
+  <h10>{{this.goals}}  <i class="futbol icon"></i> </h10>
+  <h10>{{this.assits}}  <i class="handshake outline icon"></i>  </h10>
+</a></td>
+    </tr>
+      {{/each}}
+  </tbody>
+</table>
+
+ <div class="ui divider"></div>
+
+<div class="ui ordered steps">
+  <div class="completed step">
+    <div class="content">
+      <div class="title">Shoes</div>
+      <div class="description">Choose your shoes properly</div>
+    </div>
+  </div>
+  <div class="completed step">
+    <div class="content">
+      <div class="title">Money</div>
+      <div class="description">Bring money counted in coins</div>
+    </div>
+  </div>
+  <div class="active step">
+    <div class="content">
+      <div class="title">Confirm Date</div>
+      <div class="description">Verify game details</div>
+    </div>
+  </div>
+</div>
+</div>  
+    
+</body>
+
