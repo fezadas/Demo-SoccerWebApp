@@ -6,7 +6,21 @@
         <a class="item {{#if player}} active {{/if}}" href="/players"><i class="child icon"></i> Players</a>
         <a class="item {{#if nextgame}} active {{/if}}" href="/nextgame"><i class="clock outline icon"></i> Next Game</a>
         <a class="item {{#if contact}} active {{/if}}" href="/contacts"><i class="facebook messenger icon"></i> Contact us</a>
+         <a class="item {{#if contact}} active {{/if}}" href="/highlights"><i class="youtube icon"></i> Videos</a>
         <div class="right menu">
         </div>
+
+        <div class="right menu">
+        {{#if user}}
+            div class="ui item right">
+            <div class="ui primary button"><a href="/logout" style="color:white"><i class="sign out icon"></i>Logout</a></div>
+        </div>
+        {{else}}
+        <div class="ui item right">
+            <div class="ui primary button"><a href="/login" style="color:white"><i class="sign in icon"></i>Login</a></div>
+        </div> 
+        {{/if}} 
+        </div>
+
     </div>
 </div>

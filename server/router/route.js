@@ -10,6 +10,7 @@
  * @private
  */
 const express = require('express')
+const usersRepository = require('../repo/userRepo.js')()
 const config = {
     host:'ec2-54-228-251-254.eu-west-1.compute.amazonaws.com',
     user: 'gtexsakxjefxwv',
@@ -18,6 +19,8 @@ const config = {
     port: 5432,
     ssl: true
 };
+
+
 
 const pg = require('pg');
 // pool takes the object above -config- as parameter
@@ -44,6 +47,9 @@ module.exports = exports = function () {
   })
 
   app.use(express.urlencoded({ extended: true }))
+  app.use(express.static(path.join(__dirname, 'static')))
+
+  app.use(express.urlencoded({ extended: true }))
   app.use(express.json())
 
   app.use(methodOverride('_method'))
@@ -60,6 +66,7 @@ module.exports = exports = function () {
                 res.status(400).send(err);
             
             }
+            result.user = req.user;
             res.render("menuView",result);
            })
     });
@@ -177,9 +184,54 @@ module.exports = exports = function () {
 
 /***************************************   CONTACT ROUTES        ************************************************** */
   app.get('/contacts', (req, res, next) => {
-            res.render("noInfoView");
+            res.render("contactsView");
             });
-    return app
+    
+
+/************************************      LOGIN ROUTES          **************************************************** */
+const expressSession = require('express-session')({ secret: 'its a secret', resave: true, saveUninitialized: true })
+  const passport = require('passport')
+  const LocalStrategy = require('passport-local').Strategy
+
+  passport.use(new LocalStrategy(
+    function (username, password, done) {
+      const user = usersRepository.verifyCredentials(username, password)
+      return user ? done(null, user) : done(null, false)
+    }
+  ))
+
+  app.use(expressSession)
+  app.use(passport.initialize())
+  app.use(passport.session())
+
+  const signInRoutes = {
+    login: '/login',
+    logout: '/logout'
+  }
+  app.get('/login', (req, res) => {
+    const loginUrl = `${req.protocol}://${req.headers.host}${req.url}`
+    res.render('login.hbs', {
+      menuState: { signInRoutes, user: req.user },
+      action: signInRoutes.login,
+      failedAttempt: loginUrl === req.headers.referer
+    })
+  })
+
+  app.get('/logout', (req, res) => { req.logout(); res.redirect('/') })
+
+  app.post(signInRoutes.login,
+    passport.authenticate('local', { failureRedirect: signInRoutes.login }),
+    (req, res) => res.redirect('/')
+  )
+
+  passport.serializeUser((user, done) => { done(null, user) })
+  passport.deserializeUser((id, done) => { done(null, id) })
+
+/************************************      YOUTUBE ROUTES          **************************************************** */
+
+app.get('/highlights', (req, res, next) => {
+    res.render("highlightsView");
+    });
+
+  return app
 }
-
-
