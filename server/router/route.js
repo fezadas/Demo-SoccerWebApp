@@ -168,7 +168,7 @@ module.exports = exports = function () {
             if (err) {
                 console.log("Can not connect to the DB" + err);
             }
-            /*client.query('SELECT * FROM NextGame ORDER BY id DESC limit 1', function (err, result) {
+            client.query('SELECT * FROM NextGame ORDER BY id DESC limit 1', function (err, result) {
                  done();
                  if (err) {
                      console.log(err);
@@ -177,9 +177,9 @@ module.exports = exports = function () {
                  }
                  res.render("nextgameView",result);
                 })
-             })*/
-            })
-             res.render("noGameView")
+             })
+            /*})
+             res.render("noGameView")*/
         });   
 
 /***************************************   CONTACT ROUTES        ************************************************** */
