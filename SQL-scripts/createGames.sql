@@ -27,6 +27,7 @@ CREATE TABLE GameInfo(
 );
 
 INSERT INTO gameinfo VALUES
+(7,'Wednesday 18 July 2018',40,'6-5','Jogo bastante equilibrado e bem disputado, sendo que a equipa da casa acaba por ganhar devido aos golos que surgiram ao cair do pano.'),
 (6,'Sunday 15 July 2018',30,'5-7','Jogo equilibrado com a equipa que perdeu a comecar melhor e adiantar-se no marcador. No entanto boa recuperacao da equipa adversaria, acabando por ganhar o jogo'),
 (5,'Friday 13 July 2018',30,'5-7','Jogo começou mal para a equipa que perdeu, demonstrando descoordenacao tatica. Teve uma boa reaccao chegando a esta apenas a perder por um golo. No entanto a outra equipa teve merito e mereceu a vitoria.','{"{"name":"Filipe Machado","id":1}","{"name":"Carolina Azeitona","id":12}","{"name":"Pedro Santos","id":2}","{"name":"Paulo Calaia","id":3}","{"name":"Rafael Francisco","id":8}","{"name":"Miguel Silva","id":21}","{"name":"Amigo do Silva"}"}','{"{"name":"Daniel Filipe"}","{"name":"Pipo","id":20}","{"name":"Amigo Daniel"}","{"name":"Amigo Daniel"}","{"name":"Amigo Daniel"}","{"name":"Amigo Daniel"}","{"name":"Amigo Daniel"}"}'),
 (4,'Sunday 8 July 2018',30,'7-6','Jogo bem disputado, resultado poderia ter caido para qualquer lado. Salientar nota artistica no meio campo...','{"Informacao indisponivel"}','{"Informacao indisponivel"}'),

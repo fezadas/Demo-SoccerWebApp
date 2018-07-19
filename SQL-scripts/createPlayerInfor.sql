@@ -32,4 +32,14 @@ CREATE TABLE PlayerInfo (
 ('Miguel Silva',1998,21,1,0,'Lateral esquerdo puro, rapido e cruza bem.','',''), 
 ('Joao Raminhas',1997,22,0,0,'Joga em posicoes mais interiores, no entanto sabe conduzir a bola em transicoes ofensivas.','',''), 
 ('Bruno Martins',1996,23,0,0,'Ponta de lança que segura bem a bola e sempre a procura de espaco para o golo.','',''), 
+('Tiago Travassos',1997,24,0,0,'Tecnicamente evoluido e sabe distribuir jogo, jogando no meio do terreno.','',''),
+('Eduardo Dinis',1997,24,0,0,'Tecnicamente evoluido e sabe distribuir jogo, jogando no meio do terreno.','',''),
 ('Tiago Travassos',1997,24,0,0,'Tecnicamente evoluido e sabe distribuir jogo, jogando no meio do terreno.','','') 
+
+
+ name|year_of_birth | id |   description    | img | position
+ 
+ INSERT INTO PlayerInfo VALUES 
+ ('Eduardo Dinis',1997,25,'Bastante evoluido tecnicamente e sabe segurar e distribuir jogo. Remate colocado.','https://scontent.flis9-1.fna.fbcdn.net/v/t1.0-9/14390791_1766920130215803_7815133262444405017_n.jpg?_nc_cat=0&oh=49b93bad0ec6e31faadce04f35fcbaa0&oe=5BE1A7A7','M,E'),
+ ('Diogo Pereira',1997,26,'Pragmático e veloz, pode jogar tanto nas laterais como na frente.','https://scontent.flis9-1.fna.fbcdn.net/v/t1.0-9/28471143_1819388604741099_4062191501413805418_n.jpg?_nc_cat=0&oh=6779cb4b3c6433faf1191ba23c2b8881&oe=5BDB0948','A,L')
+ 

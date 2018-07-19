@@ -6,10 +6,9 @@ CREATE TABLE NextGame(
    team2         varchar(255)
 );
 
-INSERT INTO NextGame VALUES(1,'Friday 13 July', 30,'Filipe Machado;Pedro Santos;Paulo Calaia;Rafael Francisco;Pipo;Miguel Silva',
-												   'Daniel Filipe;Amigo Silva;Amigo Daniel;Amigo Daniel;Amigo Daniel;Amigo Daniel;Amigo Daniel')
+INSERT INTO NextGame VALUES(1,'Friday 18 July', 30,'{"Filipe Machado","Pedro Santos","Paulo Calaia","Gonçalo Pereira","Eduardo Dinis","Amigo Eduardo","Joao Franco"}',
+												  '{"Rafael Francisco","Nuno Gomes","Pipo Duarte","Diogo Pereira","Miguel Silva","Joao Raminhas","Ruben Bexiga"}')
 												   
 												   
 												  
-												  {"Filipe Machado","Carolina Azeitona","Pedro Santos","Paulo Calaia","Rafael Francisco","Pipo","Miguel Silva"}
-												  {"Daniel Filipe","Amigo Silva","Amigo Daniel","Amigo Daniel","Amigo Daniel","Amigo Daniel","Amigo Daniel"}
+												  

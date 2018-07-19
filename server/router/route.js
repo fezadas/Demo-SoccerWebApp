@@ -175,7 +175,7 @@ module.exports = exports = function () {
                      res.status(400).send(err);
                      next()
                  }
-                 res.render("nextgameView",result);
+                 res.render("noGameView"/*,result*/);
                 })
              })
             /*})
