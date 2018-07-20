@@ -11,6 +11,19 @@ CREATE TABLE GamePlayerRelation
 )
 
 INSERT INTO GamePlayerRelation VALUES 
+(7,1,0,1,1),
+(7,2,2,0,1),
+(7,26,2,0,1),
+(7,6,1,0,2),
+(7,7,2,0,1),
+(7,8,0,0,1),
+(7,13,0,0,1),
+(7,21,0,0,2),
+(7,20,1,0,2),
+(7,25,0,0,2)
+
+
+INSERT INTO GamePlayerRelation VALUES 
 (5,1,2,1,1),
 (6,1,0,1,1),
 (5,2,0,0,1),
@@ -29,6 +42,8 @@ INSERT INTO GamePlayerRelation VALUES
 (6,7,1,1,1),
 (6,11,2,1,2),
 (5,20,1,0,2)
+
+
 
 SELECT idGame,idPlayer,name,P.goals,P.assits,team FROM Player INNER JOIN (
 	SELECT idGame,idPlayer,GamePlayerRelation.goals,GamePlayerRelation.assits,GamePlayerRelation.team FROM (
