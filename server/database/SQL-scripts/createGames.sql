@@ -4,7 +4,8 @@ INSERT INTO "Game" VALUES
 (3,'Sunday 1 July 2018',30,'11-4','Equipa muito mais dominadora e eficaz que a outra. Diferenca de golos um pouco injusta para o jogo disputado.'),
 (2,'Sunday 26 June 2018',40,'5-2','Ganhou a melhor equipa, com os jogadores de maior qualidade e talento.'),
 (1,'Sunday 22 June 2018',49,'7-5','Jogo bem disputado, resumiu-se aos pormenores taticos e eficacia.')
-(6,'Sunday 15 July 2018',30,'5-7','Jogo equilibrado com a equipa que perdeu a comecar melhor e adiantar-se no marcador. No entanto boa recuperacao da equipa adversaria, acabando por ganhar o jogo')
+(6,'Sunday 15 July 2018',30,'5-7','Jogo equilibrado com a equipa que perdeu a comecar melhor e adiantar-se no marcador. No entanto boa recuperacao da equipa adversaria, acabando por ganhar o jogo'),
+(8,'Sunday 22 July 2018',30,'5-8','A equipa que perdeu ate comecou a ganhar, mas devido a erros permitiu que a outra equipa chegasse ao empate. Bruno Santos e decisivo e acaba por marcar os golos que dao a vitoria.')
 
 CREATE TABLE public."Game"
 (

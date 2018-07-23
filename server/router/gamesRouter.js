@@ -73,9 +73,9 @@ router.get('/games', (req, res, next) => {
                      res.status(400).send(err);
                      next()
                  }
-                 res.render("noGameView"/*,result*/);
+                 if(result)
+                 res.render("nextgameView",result);
+                 else  res.render("noGameView")
                 })
              })
-            /*})
-             res.render("noGameView")*/
         });  

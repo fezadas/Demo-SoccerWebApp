@@ -69,7 +69,7 @@ module.exports = exports = function () {
             
             }
             result.user = req.user;
-            res.render("menuView",result);
+            res.render("homeView",result);
            })
     });
     })
