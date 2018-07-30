@@ -12,6 +12,46 @@ p.thick {
 </style>
 <body>
     {{> menu this.menuState }}  
+
+
+<div class="ui center horizontal segments">
+  <div class="ui center aligned  segment">
+    <div class="ui search">
+  <div class="ui icon input">
+    <input class="prompt" type="text" placeholder="search player...">
+    <i class="search icon"></i>
+  </div>
+  <div class="results"></div>
+</div>
+  </div>
+  <div class="ui center aligned  segment">
+    <div class="ui form">
+  <div class="inline fields">
+    <label for="fruit">Order by:</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" checked="" tabindex="0" class="hidden">
+        <label>Goals</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Assists</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Apperances</label>
+      </div>
+    </div>
+  </div>
+  </div>
+   </div>
+</div>
+
+
     <div class="item">
         <div class="ui centered four column grid">
         {{#each rows}}

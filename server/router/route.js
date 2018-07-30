@@ -57,22 +57,49 @@ module.exports = exports = function () {
   router.use(methodOverride('_method'))
 
   router.get('/', (req, res, next) => {
+    let scorer 
+    let player 
+    let assister 
     pool.connect(function (err, client, done) {
         if (err) {
             console.log("Can not connect to the DB" + err);
         }
-        client.query('SELECT * FROM "Game" ORDER BY id DESC LIMIT 3', function (err, result) {
+        
+        
+        client.query('SELECT name FROM Player ORDER BY goals DESC LIMIT 1', function (err, result) {
+            if (err) {
+                console.log(err);
+                res.status(400).send(err);
+            
+            }
+            scorer = result.rows[0].name
+           })
+        client.query('SELECT name FROM Player ORDER BY assists DESC LIMIT 1', function (err, result) {
+            if (err) {
+                console.log(err);
+                res.status(400).send(err);
+            
+            }
+            assister = result.rows[0].name
+           })
+        client.query('SELECT name FROM Player ORDER BY appearance DESC LIMIT 2', function (err, result) {
             done();
             if (err) {
                 console.log(err);
                 res.status(400).send(err);
             
             }
-            result.user = req.user;
-            res.render("homeView",result);
+            player = result.rows
+            res.render("homeView",
+           {player:player,
+            assister:assister,
+            scorer:scorer}
+    )
            })
-    });
     })
+    
+})
+    
 
   router.use(function(req, res, next){
         res.status(404);
