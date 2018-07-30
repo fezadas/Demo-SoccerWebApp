@@ -73,7 +73,7 @@ router.get('/games', (req, res, next) => {
                      res.status(400).send(err);
                      next()
                  }
-                 if(result)
+                 if(result.rowCount > 0)
                  res.render("nextgameView",result);
                  else  res.render("noGameView")
                 })
