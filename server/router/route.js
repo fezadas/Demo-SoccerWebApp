@@ -20,6 +20,8 @@ const loginRouter = require('../router/loginRouter.js')
 const gamesRouter = require('../router/gamesRouter.js')
 const contactsRouter = require('../router/contactsRouter.js')
 const youtubeRouter = require('../router/youtubeRouter.js')
+const bestMomentsRouter = require('../router/bestMomentsRouter.js')
+const tournamentsRouter = require('../router/tournamentsRouter.js')
 
 module.exports = exports = function () {
      
@@ -38,6 +40,8 @@ module.exports = exports = function () {
   router.use(gamesRouter)
   router.use(contactsRouter)
   router.use(youtubeRouter)
+  router.use(bestMomentsRouter)
+  router.use(tournamentsRouter)
 
   router.use((req, res, next) => {
     const oldEnd = res.end

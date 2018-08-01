@@ -1,0 +1,29 @@
+<head>
+    {{> head}}
+</head>
+
+<script language='javascript'>
+             $(document).ready(function(){
+                $('.ui.inverted.accordion').accordion();
+             });
+</script>
+
+<body>
+    {{> menu this.menuState }} 
+    
+<div class="item">
+        <div class="ui centered four column grid">
+        {{#each rows}}
+            <div class="column">
+                <div class="ui segment">
+                        <p><img class= "ui centered image" width='300px' src={{img}}></p>
+                    <div class="ui center aligned header">
+                        <h3 style="color:red">{{name}}</h3>
+                        <p><small>{{description}}</small></p>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+        </div>
+    </div>
+</body>

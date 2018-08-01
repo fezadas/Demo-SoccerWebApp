@@ -8,6 +8,8 @@ INSERT INTO "Game" VALUES
 (8,'Sunday 22 July 2018',30,'5-8','A equipa que perdeu ate comecou a ganhar, mas devido a erros permitiu que a outra equipa chegasse ao empate. Bruno Santos e decisivo e acaba por marcar os golos que dao a vitoria.')
 (9,'Thursday 26 July 2018',40,'6-7','Jogo bastante equilibrado, ambas as equipas mereciam ganhar, acabando porque fazer a diferença a eficacia dos remates de uma equipa.')
 (10,'Sunday 29 July 2018',30,'7-10','Equipa vencedora ganha uma confortavel vantagem no inicio do jogo. De seguida boa resposta do adversario mas a qualidade do Bruno Santos mais uma vez faz a diferença.Jogo bem dispotado.'),
+(11,'Tuesday 31 July 2018',40,'8-5','Jogo a um ritmo bastante elevado, bem disputado e o resultado podia ter caida para qualquer lado.'),
+
 CREATE TABLE public."Game"
 (
   id numeric NOT NULL,

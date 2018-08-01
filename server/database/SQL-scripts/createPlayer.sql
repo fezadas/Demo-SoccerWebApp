@@ -23,6 +23,9 @@
 ('Bruno Martins',1996,23,0,0), 
 ('Tiago Travassos',1997,24,0,0) 
 
+('Pedro Santos',1997,29,0,1)
+( 
+
 CREATE TABLE Player (
         name varchar(50) not null,
 		year_of_birth varchar(50) not null,

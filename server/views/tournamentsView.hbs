@@ -1,0 +1,42 @@
+<head>
+    {{> head}}
+</head>
+
+<script language='javascript'>
+             $(document).ready(function(){
+                $('.ui.inverted.accordion').accordion();
+             });
+</script>
+
+<body>
+    {{> menu this.menuState }} 
+
+
+<div class="ui segment">
+  <div style="text-align:center" class="ui center blue huge header">Tournaments Page </div>
+</div>
+
+<div class="ui center aligned segment">
+  The tournaments will be held in advance and the form of the tournament will be 3 teams playing with each other 2 times, for 20 minutes. The one with the most points and the best difference of goals wins the tournament.
+</div>
+
+<table class="ui definition table">
+  <thead>
+    <tr>
+    <th></th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>Example one</td>
+      <td>None</td>
+      <td>... €</td>
+    </tr>
+    <tr>
+      <td>Example two</td>
+      <td>None</td>
+      <td>... €</td>
+    </tr>
+</tbody></table>
+</body>

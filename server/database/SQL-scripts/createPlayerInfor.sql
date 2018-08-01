@@ -37,9 +37,11 @@ CREATE TABLE PlayerInfo (
 ('Tiago Travassos',1997,24,0,0,'Tecnicamente evoluido e sabe distribuir jogo, jogando no meio do terreno.','','') 
 
 
+
  name|year_of_birth | id |   description    | img | position
  
  INSERT INTO PlayerInfo VALUES 
  ('Eduardo Dinis',1997,25,'Bastante evoluido tecnicamente e sabe segurar e distribuir jogo. Remate colocado.','https://scontent.flis9-1.fna.fbcdn.net/v/t1.0-9/14390791_1766920130215803_7815133262444405017_n.jpg?_nc_cat=0&oh=49b93bad0ec6e31faadce04f35fcbaa0&oe=5BE1A7A7','M,E'),
  ('Diogo Pereira',1997,26,'Pragmático e veloz, pode jogar tanto nas laterais como na frente.','https://scontent.flis9-1.fna.fbcdn.net/v/t1.0-9/28471143_1819388604741099_4062191501413805418_n.jpg?_nc_cat=0&oh=6779cb4b3c6433faf1191ba23c2b8881&oe=5BDB0948','A,L')
+ ('Pedro Santos',1997,29,'O melhor guarda redes que ja passou no nosso grupo. Muito dificil de lhe conseguir marcar um golo.','https://scontent.flis9-1.fna.fbcdn.net/v/t31.0-8/886132_349390991833219_1258073739_o.jpg?_nc_cat=0&oh=c53c7e4d39be57fde66e19743659b919&oe=5C122181','GR')
  
