@@ -11,12 +11,24 @@ const pg = require('pg');
 const config = require('../database/psql.js')
 const pool = new pg.Pool(config);
 
+router.use((req, res, next) => {
+    const oldEnd = res.end
+    res.end = function (...args) {
+      console.log(`Serviced ${req.method} ${req.originalUrl} with status code ${res.statusCode}`)
+      return oldEnd.call(this, ...args)
+    }
+    next()
+  })
+
 router.get('/players', (req, res, next) => {
+    let query = 'SELECT * FROM Player order by '
+    if(req.query.orderby) query = query+req.query.orderby + ' desc'
+    else query = query + 'goals desc'
     pool.connect(function (err, client, done) {
         if (err) {
             console.log("Can not connect to the DB" + err);
         }
-        client.query('SELECT * FROM Player order by goals desc', function (err, result) {
+        client.query(query, function (err, result) {
              done();
              if (err) {
                  console.log(err);

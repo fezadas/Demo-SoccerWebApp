@@ -30,19 +30,19 @@ p.thick {
     <label for="fruit">Order by:</label>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="fruit" checked="" tabindex="0" class="hidden">
+        <input type="radio" name="goals" onclick="orderByGoals()" id="goals">
         <label>Goals</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <input type="radio" name="assists"  onclick="orderByAssists()" id="assists">
         <label>Assists</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <input type="radio" name="appearance"  onclick="orderByApperances()" id="appearance">
         <label>Apperances</label>
       </div>
     </div>
@@ -51,6 +51,51 @@ p.thick {
    </div>
 </div>
 
+<script>
+function orderByApperances() {
+    var http = new XMLHttpRequest();
+    var url = '/players'
+    http.open("GET", url+'?orderby=appearance',true);
+    document.getElementById('appearance').setAttribute("checked","true")
+    http.onreadystatechange = function () {
+      if(http.status == 200 ) {
+        console.log(http.responseText);
+        location.assign('/players?orderby=appearance')
+      }else console.log(http.responseText);
+    };
+    http.send(null);
+}
+</script>
+<script>
+function orderByAssists() {
+    var http = new XMLHttpRequest();
+    document.getElementById('assists').setAttribute("checked","true")
+    var url = '/players'
+    http.open("GET", url+'?orderby=assists',true);
+    http.onreadystatechange = function () {
+      if(http.status == 200 ) {
+        console.log(http.responseText);
+        location.assign('/players?orderby=assists')
+      }else console.log(http.responseText);
+    };
+    http.send(null);
+}
+</script>
+<script>
+function orderByGoals() {
+    var http = new XMLHttpRequest();
+    var url = '/players'
+    http.open("GET", url+'?orderby=goals',true);
+    document.getElementById('goals').setAttribute("checked","true")
+    http.onreadystatechange = function () {
+      if(http.status == 200 ) {
+        console.log(http.responseText);
+        location.assign('/players?orderby=goals')
+      }else console.log(http.responseText);
+    };
+    http.send(null);
+}
+</script>
 
     <div class="item">
         <div class="ui centered four column grid">
