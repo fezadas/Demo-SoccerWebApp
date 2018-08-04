@@ -10,6 +10,8 @@ INSERT INTO "Game" VALUES
 (10,'Sunday 29 July 2018',30,'7-10','Equipa vencedora ganha uma confortavel vantagem no inicio do jogo. De seguida boa resposta do adversario mas a qualidade do Bruno Santos mais uma vez faz a diferença.Jogo bem dispotado.'),
 (11,'Tuesday 31 July 2018',40,'8-5','Jogo a um ritmo bastante elevado, bem disputado e o resultado podia ter caida para qualquer lado.'),
 
+update "Game" set weather='' , weatherImg='' where id=
+
 CREATE TABLE public."Game"
 (
   id numeric NOT NULL,

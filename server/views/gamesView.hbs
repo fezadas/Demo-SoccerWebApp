@@ -23,6 +23,7 @@
     <th style="text-align:center">Score</th>
     <th style="text-align:center">Price</th>
     <th style="text-align:center">Comments</th>
+    <th style="text-align:center">Weather</th>
   </tr></thead>
   <tbody>
       {{#each rows}}
@@ -42,6 +43,7 @@
         {{price}}€
       </td>
       <td>{{comments}}</td>
+      <td><img class="ui avatar image" src={{weatherimg}}><small style="font-weight: bold">{{weather}}</small></td>
     </tr>
       {{/each}}
   </tbody>
