@@ -21,6 +21,28 @@ router.use((req, res, next) => {
   })
 
 router.get('/players', (req, res, next) => {
+
+    if(req.query.name){
+    let nameQuery = "SELECT * FROM Player where name ='" +req.query.name +"'"
+    pool.connect(function (err, client, done) {
+        if (err) {
+            console.log("Can not connect to the DB" + err);
+        }
+        client.query(nameQuery, function (err, result) {
+             done();
+             if (err) {
+                 console.log(err);
+                 res.status(400).send(err);
+                 next()
+             }
+             res.render("playersView",{
+                result:result,
+                checkbox:req.query.orderby
+             });
+            })
+         })
+    }
+    else{
     let query = 'SELECT * FROM Player order by '
     if(req.query.orderby) query = query+req.query.orderby + ' desc'
     else query = query + 'goals desc'
@@ -35,10 +57,14 @@ router.get('/players', (req, res, next) => {
                  res.status(400).send(err);
                  next()
              }
-             res.render("playersView",result);
+             res.render("playersView",{
+                result:result,
+                checkbox:req.query.orderby
+             });
             })
-         })
+         })}
     });
+    
 
   router.get('/players/:id', (req, res, next) => {
       const id = req.params.id

@@ -34,6 +34,7 @@ module.exports = exports = function () {
   router.set('view engine', 'hbs')
   router.set('views', './server/views')
   hbs.registerPartials('./server/views/partials')
+  hbs.registerHelper('equals', (theOne, theOther) => theOne === theOther)
 
   router.use(playersRouter)
   router.use(loginRouter)
