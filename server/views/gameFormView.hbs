@@ -1,0 +1,55 @@
+<head>
+    {{> head}}
+</head>
+<body>
+<div class="ui segment">
+<form class="ui form container" method="POST" action='/games'>
+    <h4 class="ui dividing header">Game Information</h4>
+    <div class="fields">
+        <div class="three wide required field">
+            <label>Identifier</label>
+            <input type="number" name="id" 
+                placeholder="Identifier"
+            />
+        </div>
+        <div class="three wide required field">
+            <label>Date</label>
+            <input type="text" name="date" 
+               placeholder="Date"
+            />
+        </div>
+        <div class="three wide required field">
+            <label>Price</label>
+            <input type="number" name="price" 
+               placeholder="Price"
+            />
+        </div>
+        <div class="three wide required field">
+            <label>Result</label>
+            <input type="text" name="result" 
+               placeholder="Result"
+            />
+        </div>
+        <div class="three wide required field">
+            <label>Comments</label>
+            <input type="text" name="comments" 
+               placeholder="Comments"
+            />
+        </div>
+        <div class="three wide required field">
+            <label>weatherimg</label>
+            <input type="text" name="weatherimg" 
+               placeholder="weatherimg"
+            />
+        </div>
+        <div class="three wide required field">
+            <label>weather</label>
+            <input type="text" name="weather" 
+               placeholder="weather"
+            />
+        </div>
+        <button class="ui button" type="submit">Create</button>
+    </div>
+</form>
+</div>
+</body>

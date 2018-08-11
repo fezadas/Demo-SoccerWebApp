@@ -10,7 +10,18 @@ INSERT INTO "Game" VALUES
 (10,'Sunday 29 July 2018',30,'7-10','Equipa vencedora ganha uma confortavel vantagem no inicio do jogo. De seguida boa resposta do adversario mas a qualidade do Bruno Santos mais uma vez faz a diferença.Jogo bem dispotado.'),
 (11,'Tuesday 31 July 2018',40,'8-5','Jogo a um ritmo bastante elevado, bem disputado e o resultado podia ter caida para qualquer lado.'),
 
-update "Game" set weather='' , weatherImg='' where id=
+update "Game" set weather='Clear sky Temp:23 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606807.svg' where id=1;
+update "Game" set weather='Passing clouds Temp:19 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606796.svg' where id=2	;
+update "Game" set weather='Passing clouds Temp:19 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606796.svg' where id=3	;
+update "Game" set weather='Passing clouds Temp:19 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606796.svg' where id=4	;
+update "Game" set weather='Passing clouds Temp:19 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606796.svg' where id=5	;
+update "Game" set weather='Passing clouds Temp:19 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606796.svg' where id=6	;
+update "Game" set weather='Passing clouds Temp:18 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606796.svg' where id=7	;
+update "Game" set weather='Passing clouds Temp:18 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606796.svg' where id=8	;
+update "Game" set weather='Clear sky Temp:19 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606807.svg' where id=9	;
+update "Game" set weather='Passing clouds Temp:19 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606796.svg' where id=10	;
+update "Game" set weather='Clear sky Temp:19 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606807.svg' where id=11;
+update "Game" set weather='Clear sky Temp:32 C ' , weatherImg='https://image.flaticon.com/icons/svg/606/606807.svg' where id=12;
 
 CREATE TABLE public."Game"
 (

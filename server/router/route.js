@@ -55,16 +55,18 @@ module.exports = exports = function () {
 
   router.use(express.urlencoded({ extended: true }))
   router.use(express.static(path.join(__dirname, 'static')))
-
-  router.use(express.urlencoded({ extended: true }))
   router.use(express.json())
-
   router.use(methodOverride('_method'))
+
+  router.get('/create', (req, res, next) => {
+      res.render('createView')
+  })
 
   router.get('/', (req, res, next) => {
     let scorer 
     let player 
     let assister 
+    let injury 
     pool.connect(function (err, client, done) {
         if (err) {
             console.log("Can not connect to the DB" + err);
@@ -87,6 +89,14 @@ module.exports = exports = function () {
             }
             assister = result.rows[0].name
            })
+           client.query('SELECT name,injury FROM Player where injury is not null', function (err, result) {
+            if (err) {
+                console.log(err);
+                res.status(400).send(err);
+            
+            }
+            injury = result.rows[0]
+           })
         client.query('SELECT name FROM Player ORDER BY appearance DESC LIMIT 2', function (err, result) {
             done();
             if (err) {
@@ -98,7 +108,9 @@ module.exports = exports = function () {
             res.render("homeView",
            {player:player,
             assister:assister,
-            scorer:scorer}
+            scorer:scorer,
+            injury:injury
+        }
     )
            })
     })

@@ -45,6 +45,8 @@ CREATE TABLE PlayerInfo (
 		position varchar(10)
 );
 
+insert into Player values ('Joao Silva',1997,30,0,0,1);
+
         name        | year_of_birth | id | goals | assists |                                                     description                                                     |                                                                              img                                                                               | position
 --------------------+---------------+----+-------+---------+---------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+----------
  Filipe Machado     | 1997          |  1 |     1 |       1 | Normalmente joga no lado direito do campo. No entanto pode assumir qualquer posicao (polivalente).                  | https://scontent.flis9-1.fna.fbcdn.net/v/t1.0-9/16406850_1524056217623351_522742296701848008_n.jpg?_nc_cat=0&oh=9ec75c8d19f85cfc836c25825eee96ed&oe=5BE82A28   | LD,M,A

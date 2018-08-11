@@ -70,8 +70,9 @@ p.thick {
       <td><a href="/players/{{idplayer}}" class="ui image label">
   <img src='https://semantic-ui.com/images/avatar/small/joe.jpg'>
   {{name}}
- <h10>{{this.goals}}  <i class="futbol icon"></i> </h10>
-  <h10>{{this.assits}}  <i class="handshake outline icon"></i>  </h10>
+ {{#if (equals this.injury '1') }}<h10><i class="ambulance icon"></i></h10> {{else}}
+  <h10>{{this.goals}}  <i class="futbol icon"></i> </h10>
+  <h10>{{this.assits}}  <i class="handshake outline icon"></i></h10> {{/if}}
 
 </a></td>
     </tr>
@@ -92,8 +93,9 @@ p.thick {
       <td><a  href="/players/{{idplayer}}" class="ui image label">
   <img src='https://semantic-ui.com/images/avatar/small/joe.jpg'>
   {{name}}
+  {{#if (equals this.injury '1') }}<h10>Injuried <i class="ambulance outline icon"></i></h10> {{else}}
   <h10>{{this.goals}}  <i class="futbol icon"></i> </h10>
-  <h10>{{this.assits}}  <i class="handshake outline icon"></i>  </h10>
+  <h10>{{this.assits}}  <i class="handshake outline icon"></i></h10> {{/if}}
 </a></td>
     </tr>
       {{/each}}
