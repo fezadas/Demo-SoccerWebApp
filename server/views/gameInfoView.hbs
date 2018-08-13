@@ -11,7 +11,31 @@ p.thick {
 
 </style>
 <body>
-   {{> menu this.menuState }}  
+   <div class="ui pointing menu">
+    <div class="ui container">
+        <div class="item"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-soccer-ball.png"></div>
+        <a class="item {{#if home}} active {{/if}}" href="/"><i class="home icon"></i> Home</a>
+        <a class="item {{#if player}} active {{/if}}" href="/game"><i class="child icon"></i> Games</a>
+        {{!--         <a class="item {{#if nextgame}} active {{/if}}" href="/nextgame"><i class="clock outline icon"></i> Next Game</a> --}}
+        {{!-- <a class="item {{#if contact}} active {{/if}}" href="/tournaments"><i class="trophy icon"></i>  Tournaments</a> --}}
+        
+        <div class="right menu">
+        </div>
+
+        <div class="right menu">
+        {{#if user}}
+            <div class="ui item right">
+            <div class="ui primary button"><a href="/logout" style="color:white"><i class="sign out icon"></i>Logout</a></div>
+        </div>
+        {{else}}
+        <div class="ui item right">
+            <div class="ui primary button"><a href="/login" style="color:white"><i class="sign in icon"></i>Login</a></div>
+        </div> 
+        {{/if}} 
+        </div>
+
+    </div>
+</div>
 
 <div align="center"> 
 <div style="display: inline-block;" class="ui center items">
