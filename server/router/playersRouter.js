@@ -23,7 +23,8 @@ router.use((req, res, next) => {
 router.get('/players', (req, res, next) => {
 
     if(req.query.name){
-    let nameQuery = "SELECT * FROM Player where name ='" +req.query.name +"'"
+    let nameQuery = 'SELECT * FROM ('+"SELECT * FROM Player where name ='" +req.query.name +"'"+') as A INNER JOIN PlayerInfo ON A.id=PlayerInfo.id'
+    
     pool.connect(function (err, client, done) {
         if (err) {
             console.log("Can not connect to the DB" + err);
@@ -43,9 +44,9 @@ router.get('/players', (req, res, next) => {
          })
     }
     else{
-    let query = 'SELECT * FROM Player order by '
-    if(req.query.orderby) query = query+req.query.orderby + ' desc'
-    else query = query + 'goals desc'
+    let query = 'select * from (select A.name,A.id,A.year_of_birth,A.goals,A.assists,A.appearance,PlayerInfo.img from player as A  inner join playerinfo on A.id=PlayerInfo.id order by'
+    if(req.query.orderby) query = query+' '+req.query.orderby + ' desc'+') as B;'
+    else query = query +  ' goals DESC) as B;'
     pool.connect(function (err, client, done) {
         if (err) {
             console.log("Can not connect to the DB" + err);
